@@ -42,9 +42,14 @@ public class Humain {
     public void setAge(int age) {
         this.age = age;
     }
+ // Méthode pour afficher les détails de l'humain en utilisant un seul System.out.println()
     public void details() {
-        System.out.println("Nom: " + nom + ", Prénom: " + prenom + ", Age: " + age);
+        System.out.println(toString());
     }
 
-    
+    // Méthode toString pour obtenir une représentation sous forme de chaîne de caractères de l'objet Humain
+    @Override
+    public String toString() {
+        return "Nom: " + nom + ", Prénom: " + prenom + ", Âge: " + age;
+    }
 }
