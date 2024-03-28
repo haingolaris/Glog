@@ -1,14 +1,19 @@
 package iut.bad;
-public class Humain implements Consommation{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Humain implements Consommation {
     private String nom;
     private String prenom;
     private int age;
+    protected List<Humain> amis; // Liste des amis de cet humain
 
     // Constructeur par défaut
     public Humain() {
         this.nom = "";
         this.prenom = "";
         this.age = 0;
+        this.amis = new ArrayList<>(); // Initialisation de la liste amis
     }
 
     // Constructeur avec tous les champs
@@ -16,6 +21,7 @@ public class Humain implements Consommation{
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
+        this.amis = new ArrayList<>(); // Initialisation de la liste amis
     }
 
     // Getters et setters
@@ -42,7 +48,8 @@ public class Humain implements Consommation{
     public void setAge(int age) {
         this.age = age;
     }
- // Méthode pour afficher les détails de l'humain en utilisant un seul System.out.println()
+
+    // Méthode pour afficher les détails de l'humain en utilisant un seul System.out.println()
     public void details() {
         System.out.println(toString());
     }
@@ -52,8 +59,8 @@ public class Humain implements Consommation{
     public String toString() {
         return "Nom: " + nom + ", Prénom: " + prenom + ", Âge: " + age;
     }
-    
- // Méthode pour manger
+
+    // Méthode pour manger
     @Override
     public void manger() {
         System.out.println(nom + " est en train de manger.");
@@ -65,4 +72,8 @@ public class Humain implements Consommation{
         System.out.println(nom + " est en train de boire.");
     }
 
+    public void ami(Humain ami) {
+        amis.add(ami);
+        System.out.println(nom + " est maintenant ami avec " + ami.getNom() + ".");
+    }
 }
