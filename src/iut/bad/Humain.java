@@ -72,8 +72,12 @@ public class Humain implements Consommation {
         System.out.println(nom + " est en train de boire.");
     }
 
-    public void ami(Humain ami) {
+    public void ami(Humain ami, int duree) {
         amis.add(ami);
-        System.out.println(nom + " est maintenant ami avec " + ami.getNom() + ".");
+        System.out.println(nom + " est maintenant ami avec " + ami.getNom() + " pour une durée de " + duree + " jours.");
     }
+    public void ami(Humain ami) {
+        ami(ami, 100); // Appel avec une durée par défaut de 100 jours
+    }
+
 }
