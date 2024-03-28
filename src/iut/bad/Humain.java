@@ -1,5 +1,5 @@
 package iut.bad;
-public class Humain {
+public class Humain implements Consommation{
     private String nom;
     private String prenom;
     private int age;
@@ -54,11 +54,13 @@ public class Humain {
     }
     
  // Méthode pour manger
+    @Override
     public void manger() {
         System.out.println(nom + " est en train de manger.");
     }
 
     // Méthode pour boire
+    @Override
     public void boire() {
         System.out.println(nom + " est en train de boire.");
     }
